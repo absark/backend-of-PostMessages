@@ -87,7 +87,7 @@ exports.getEditPost = (req,res,next)=>{
 exports.deletePost = (req,res,next)=>{
          Post.deleteOne({_id:req.params.id,creator:req.userId})
         .then(doc=>{
-              if(doc.nModified>0){
+              if(doc.n>0){
                     res.status(201).json({
                     status:'deleted!'
                     })
