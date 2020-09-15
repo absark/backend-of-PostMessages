@@ -26,7 +26,9 @@ app.use((req,res,next)=>{
 });
 
 app.use("/images",express.static(path.join(__dirname,`/images`)));
-
+app.get('/test',(req,res,next)=>{
+    res.status(200).json({message:'Successfully deployed'})
+})
 app.use('/api/posts',postRouter);
 app.use('/api/users',userRouter);
 
